@@ -1,6 +1,6 @@
 <?php
 /*
-Plugin Name: BigOven Recipes, Menus and more...
+Plugin Name: BigOven
 Plugin URI: http://wordpress.bigoven.com/
 Description: Allows you to take your recipes and menus hosted at BigOven to your WordPress site.
 Tags: recipes, menus, food, hRecipe, bigoven, 
