@@ -4,7 +4,7 @@ Donate link: http://wordpress.bigoven.com/
 Tags: recipe,hrecipe,ziplist,grocery,food,recipes
 Requires at least: 3.0.1
 Tested up to: 4.0
-Stable tag: 1.0.1
+Stable tag: 1.0.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -14,9 +14,9 @@ Make your food blog better with rich snippet markup, SEO improvements, save reci
 
 * **Improve your Google and Bing search-engine presence**: This plugin takes care of the hidden "rich snippets" markup of recipes for Search Engine Optimization (SEO), marking up your recipes with the preferred format from Google and Schema.org.
 
-* **Import from Ziplist** – The Ziplist plugin for WordPress will soon be discontinued. Transitioning to the BigOven recipe WordPress plugin as your alternative is seamless. The BigOven plugin will import your recipes and change the shortcodes in old posts to the newly updated recipe records in a single click.  As this plugin modifies previous posts, be sure to back up your MySQL database before you click the option “Import from Ziplist” in the Settings area.
+* **Import from Ziplist**: The Ziplist plugin for WordPress will soon be discontinued. Transitioning to the BigOven recipe WordPress plugin as your alternative is seamless. The BigOven plugin will import your recipes and change the shortcodes in old posts to the newly updated recipe records in a single click.  As this plugin modifies previous posts, be sure to back up your MySQL database before you click the option "Import from Ziplist" in the Settings area.
 
-* **Give your readers "Save Recipe" and "Add to Grocery List" features**! These optional, convenient features allow your recipes to easily be saved to the reader’s "My Recipes" area and grocery list. Cooks can bring your recipes to the grocery store or kitchen counter with the award-winning [BigOven recipe apps](http://www.bigoven.com/mobile). Full credit and links to your original recipe are preserved.  BigOven wants to help highlight your great content, making more 
+* **Give your readers "Save Recipe" and "Add to Grocery List" features**! These optional, convenient features allow your recipes to easily be saved to the reader's "My Recipes" area and grocery list. Cooks can bring your recipes to the grocery store or kitchen counter with the award-winning [BigOven recipe apps](http://www.bigoven.com/mobile). Full credit and links to your original recipe are preserved.  BigOven wants to help highlight your great content, making more 
 foodies aware of your writing.  We'll be using this plugin to help our editors scour the web for the the most popular food content.
 
 * **Organize your recipes**: Search your recipes by title for easy reference while posting. Your recipes list will live in the "Recipes" area of the WordPress compose dialogue. This makes combining multiple recipes in a post an easy task.
@@ -65,8 +65,11 @@ to determine whether or not to render the rich snippet version of the recipe in 
 
 == Changelog ==
 
-= 1.0.1=
-Readme improvements, screenshots
+= 1.0.2 =
+* Readme update
+
+= 1.0.1 =
+* Readme improvements, screenshots
 
 = 1.0 =
 * Major new release supporting Import from Ziplist, recipe SEO rich snippet markup, Save recipe / Save Grocery list features.
