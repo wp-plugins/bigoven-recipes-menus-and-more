@@ -1,7 +1,6 @@
 jQuery(document).ready(function($) {
 	$(document).on('click', '.bo-recipe-save', function(event) {
 		event.preventDefault();
-
 		var BO_HOST = 'http://www.bigoven.com',
 			x = document.createElement('script');
 
