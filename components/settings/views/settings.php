@@ -3,9 +3,9 @@
 
 	<?php settings_errors(); ?>
 
-	<p><?php printf(__('This plugin is &copy; 2014 BigOven, but your content is your own, and always will be. Read Our <a href="%s" target="_blank">Pledge to Food Bloggers</a>.'), 'http://blog.bigoven.com/index.php/our-pledge-to-food-bloggers/'); ?></p>
+	<p><?php printf(__('This plugin is &copy;2014 BigOven, but all your content is your own, and always will be. Read our <a href="%s" target="_blank">Pledge to Food Bloggers</a>.'), 'http://blog.bigoven.com/index.php/our-pledge-to-food-bloggers/'); ?></p>
 
-	<p><?php printf(__('Do you need help? <a href="%s" target="_blank">Click here</a> to learn more about the BigOven plugin for WordPress.'), 'http://support.bigoven.com/hc/en-us/articles/202384125'); ?></p>
+	<p><?php printf(__('Do you need help? <a href="%s" target="_blank">Click here</a> to learn more about the BigOven plugin for WordPress.'), 'http://wordpress.bigoven.com'); ?></p>
 
 	<form action="options.php" method="post">
 		<h3><?php _e('Display'); ?></h3>
@@ -38,9 +38,9 @@
 
 						<label>
 							<input type="checkbox" <?php checked('yes', $settings['save-recipe']); ?> id="<?php echo self::_get_setting_id('save-recipe-yes'); ?>" name="<?php echo self::_get_setting_name('save-recipe'); ?>" value="yes" />
-							<?php _e('Let readers save your recipes'); ?>
+							<?php _e('Let readers save your recipes or add items to mobile grocery list'); ?>
 						</label>
-						<p class="description"><?php printf(__('Checking this box will allow your readers to save the recipes they’d like to their own recipe collection, and make mobile-friendly grocery lists. <a href="%s">Learn more</a>.'), $support_url); ?></p>
+						<p class="description"><?php printf(__('Checking this box will allow your readers to save the recipes they’d like to their own recipe collection, and make mobile-friendly grocery lists, with a full link back to your site. <a href="%s">Learn more</a>.'), 'http://wordpress.bigoven.com'); ?></p>
 					</td>
 				</tr>
 
@@ -51,16 +51,16 @@
 
 						<label>
 							<input type="checkbox" <?php checked('yes', $settings['feature-recipe']); ?> id="<?php echo self::_get_setting_id('feature-recipe-yes'); ?>" name="<?php echo self::_get_setting_name('feature-recipe'); ?>" value="yes" />
-							<?php _e('Let BigOven feature your recipes'); ?>
+							<?php _e('Let BigOven feature your recipes in the popular <a href="http://www.bigoven.com/mobile">BigOven mobile apps</a>'); ?>
 						</label>
-						<p class="description"><?php printf(__('Let BigOven’s editorial team know that a snippet of my recipes can be featured, including full link back to original source for recipe instructions. <a href="%s" target="_blank">Learn more</a>.'), $support_url); ?></p>
+						<p class="description"><?php printf(__('BigOven is always looking for the best food writing on the web to feature.  In 2015 and beyond, we will be displaying select articles of great food writing and recipe ideas - full blog articles from third-party blogs - in a "Best of Web" section within the popular mobile apps (11+ million downloads at this writing).  To qualify for this exposure, your blog must be mobile-friendly (check on iPhone in particular) and you must have the "Save Recipe" option above enabled on your blog.  Checking this option will let BigOven’s editorial team know you\'d welcome no-cost additional exposure. <a href="%s" target="_blank">Learn more</a>.'), $support_url); ?></p>
 					</td>
 				</tr>
 			</tbody>
 		</table>
 
 		<p>
-			<?php printf(__('Got an idea or suggested improvement? <a href="%s" target="_blank">Let us know</a>.'), 'http://www.bigoven.com/site/comments'); ?>
+			<?php printf(__('<h3>Got ideas?</h3><p>We want BigOven to be the ideal food-blogger\'s companion, helping you make a great site and delighting your readers with tools that make planning and organizing easier. Got an idea or suggested improvement? <a href="%s" target="_blank">Let us know</a>.</p>'), 'http://www.bigoven.com/site/comments'); ?>
 		</p>
 
 		<p class="submit">
@@ -78,7 +78,7 @@
 
 		<p>
 			<strong><?php _e('Important:'); ?></strong>
-			<?php printf(__('Before importing from ZipList Recipes, please back up your MySQL database. This process causes non-reversible changes to post content in order to replace ZipList Recipes shortcodes with BigOven Recipes shortcodes. <a href="%s" target="_blank">Learn more</a>.'), $support_url);; ?>
+			<?php printf(__('Before importing from ZipList Recipes, please back up your MySQL database. This makes irreversible changes to post content in order to replace ZipList Recipes shortcodes with BigOven Recipes shortcodes. <a href="%s" target="_blank">Learn more</a>.'), $support_url);; ?>
 		</p>
 
 		<p class="submit">

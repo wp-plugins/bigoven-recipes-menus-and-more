@@ -141,10 +141,10 @@ class BO_Recipes_Components_Settings {
 	private static function _get_settings_defaults() {
 		return apply_filters('bo_recipes_pre_get_settings_defaults', array(
 			// Display
-			'number-instructions' => 'yes',
+			'number-instructions' => 'no',
 
 			// Enhance
-			'save-recipe' => 'no',
+			'save-recipe' => 'yes',
 			'feature-recipe' => 'no',
 
 			// Import from ZipList

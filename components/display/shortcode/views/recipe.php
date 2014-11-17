@@ -1,11 +1,11 @@
 <div class="bo-recipe">
-	<div class="hrecipe">
+	<div class="hrecipe" rel="<?php echo esc_html($recipe->ID); ?>">
 
 		<h2 class="fn"><?php echo esc_html($recipe->post_title); ?></h2>
 
 		<?php if('yes' === bo_recipes_get_setting('save-recipe')) { ?>
 		<p class="bo-recipe-save-container" style="display: none;">
-			<a class="bo-recipe-save">
+			<a class="bo-recipe-save" rel="<?php echo esc_html($recipe->ID); ?>">
 				<img src="http://media.bigoven.com/assets/images/saverecipe.png" alt="<?php _e('Save recipe or make grocery list'); ?>" title="<?php _e('Save recipe or make grocery list'); ?>" />
 			</a>
 		</p>
@@ -19,7 +19,7 @@
 
 		<?php if($recipe->post_content) { ?>
 		<div class="summary">
-			<?php echo apply_filters('the_content', $recipe->post_content); ?>
+			<?php echo $recipe_summary; ?>
 		</div>
 		<?php } ?>
 
@@ -32,7 +32,11 @@
 		<?php if(($ingredients = bo_recipes_get_ingredients($recipe->ID))) { ?>
 		<ul class="ingredient-list">
 			<?php foreach($ingredients as $ingredient) { ?>
+            <?php if(startsWith($ingredient,'!')){ ?>
+			<li class="ingredHeading"><?php echo esc_html(str_replace("!","",$ingredient)); ?></li>
+            <?php } else { ?>
 			<li class="ingredient"><?php echo esc_html($ingredient); ?></li>
+   			<?php } ?>
 			<?php } ?>
 		</ul>
 		<?php } ?>

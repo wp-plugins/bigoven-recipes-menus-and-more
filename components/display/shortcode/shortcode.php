@@ -58,6 +58,8 @@ class BO_Recipes_Components_Display_Shortcode {
 		ob_start();
 
 		if($recipe && BO_RECIPES_RECIPE_TYPE === $recipe->post_type && 'publish' === $recipe->post_status) {
+			$recipe_summary = wptexturize(convert_smilies(convert_chars(wpautop($recipe->post_content))));
+
 			include(path_join(dirname(__FILE__), 'views/recipe.php'));
 		}
 

@@ -4,7 +4,7 @@
 			<th scope="row"><label for="bo-recipes-ingredients"><?php _e('Ingredients'); ?></label></th>
 			<td>
 				<textarea class="large-text" id="bo-recipes-ingredients" name="bo-recipes[ingredients]" placeholder="<?php _e('2 tablespoons butter'); ?>" rows="6"><?php echo esc_textarea($recipe_attributes['ingredients']); ?></textarea>
-				<p class="description"><?php _e('Press enter after each ingredient, including the quantity and measurement - there is no need to number your ingredients'); ?></p>
+				<p class="description"><?php _e('Press enter after each ingredient, including the quantity and measurement - there is no need to number your ingredients. For headings, start the line with !'); ?></p>
 			</td>
 		</tr>
 
