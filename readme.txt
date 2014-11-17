@@ -4,7 +4,7 @@ Donate link: http://wordpress.bigoven.com/
 Tags: recipe,hrecipe,ziplist,grocery,food,recipes
 Requires at least: 3.0.1
 Tested up to: 4.0
-Stable tag: 1.0.4
+Stable tag: trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -64,9 +64,12 @@ to determine whether or not to render the rich snippet version of the recipe in 
 5.  The settings view lets you choose whether or not to list recipe instructions in numbered form, whether or not to enable the "Save Recipe" button and more.
 
 == Changelog ==
+= 1.0.5 = 
+* Clarifying improvements to text in control panel
 
 = 1.0.4 =
-* Put an exclamation point at the start of an ingredient line and it'll be treated as a heading, example:
+* You can now put an exclamation point at the start of an ingredient line and it'll be treated as a heading.  Example:
+
 !For the Frosting
 1/2 cup butter
 1 cup sugar
