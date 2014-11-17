@@ -65,6 +65,16 @@ to determine whether or not to render the rich snippet version of the recipe in 
 
 == Changelog ==
 
+= 1.0.4 =
+* Put an exclamation point at the start of an ingredient line and it'll be treated as a heading, example:
+!For the Frosting
+1/2 cup butter
+1 cup sugar
+etc.
+!For the Cake
+2 cups flour
+etc.
+
 = 1.0.2 =
 * Readme update
 
