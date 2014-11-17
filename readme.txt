@@ -64,6 +64,9 @@ to determine whether or not to render the rich snippet version of the recipe in 
 5.  The settings view lets you choose whether or not to list recipe instructions in numbered form, whether or not to enable the "Save Recipe" button and more.
 
 == Changelog ==
+= 1.0.6 =
+* Remove common hook (was interfering with other common plugins)
+
 = 1.0.5 = 
 * Clarifying improvements to text in control panel
 
