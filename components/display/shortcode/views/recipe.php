@@ -5,7 +5,7 @@
 
 		<?php if('yes' === bo_recipes_get_setting('save-recipe')) { ?>
 		<p class="bo-recipe-save-container" style="display: none;">
-			<a class="bo-recipe-save">
+			<a class="bo-recipe-save" style="cursor:pointer;">
 				<img src="http://media.bigoven.com/assets/images/saverecipe.png" alt="<?php _e('Save recipe or add to grocery list'); ?>" title="<?php _e('Save recipe or make grocery list'); ?>" />
 			</a>
 		</p>
