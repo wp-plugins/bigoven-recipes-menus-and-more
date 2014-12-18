@@ -3,13 +3,21 @@
 
 		<h2 class="fn"><?php echo esc_html($recipe->post_title); ?></h2>
 
+    
+        <div class="bo-recipe-control">
 		<?php if('yes' === bo_recipes_get_setting('save-recipe')) { ?>
-		<p class="bo-recipe-save-container" style="display: none;">
-			<a class="bo-recipe-save" rel="<?php echo esc_html($recipe->ID); ?>" style="cursor:pointer;box-shadow:none;">
-				<img src="http://media.bigoven.com/assets/images/saverecipe.png" alt="<?php _e('Save recipe or make grocery list'); ?>" title="<?php _e('Save recipe or make grocery list'); ?>" />
+		<div class="bo-recipe-save-container" style="display: none;">
+			<a class="bo-recipe-save" rel="<?php echo esc_html($recipe->ID); ?>" title="<?php _e('Save recipe or make grocery list'); ?>">
+				Save
 			</a>
-		</p>
-		<?php } ?>
+		</div>
+        <div class="bo-recipe-print-container">
+			<a class="bo-recipe-print" href="<?php echo esc_attr(esc_url(bo_recipes_get_print_url($recipe->ID))); ?>" target="_blank">
+				<?php _e('Print'); ?>
+			</a>
+		</div>
+        </div>
+    	<?php } ?>
 
 		<?php if(has_post_thumbnail($recipe->ID)) { ?>
 		<div class="photo-container">

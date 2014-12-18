@@ -1,11 +1,8 @@
+var bo_recipeId = null;
 jQuery(document).ready(function($) {
-	var bo_recipeId = null;
 	$(document).on('click', '.bo-recipe-save', function(event) {
 		event.preventDefault();
 	    bo_recipeId = jQuery(this).attr("rel");
-	    var parentUrl = document.URL;
-	    jQuery.post('http://www.bigoven.com/utils/logclip',{url: parentUrl});
-
 		var BO_HOST = 'http://www.bigoven.com',
 			x = document.createElement('script');
 

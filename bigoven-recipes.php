@@ -1,10 +1,10 @@
 <?php
 
 /*
-Plugin Name: BigOven - Recipes
-Plugin URI: http://www.bigoven.com/
+Plugin Name: Recipe SEO plus "Save Recipe" Button - BigOven
+Plugin URI: http://wordpress.bigoven.com/
 Description: Create, manage, and display SEO-friendly recipes for your site with an easy interface.
-Version: 1.0.9
+Version: 1.1.0
 Author: BigOven (c) 2014
 Author URI: http://www.bigoven.com/
 */
@@ -14,7 +14,7 @@ if(!defined('ABSPATH')) { exit; }
 // Plugin constants
 
 if(!defined('BO_RECIPES_VERSION')) {
-	define('BO_RECIPES_VERSION', '1.0.8');
+	define('BO_RECIPES_VERSION', '1.1.0');
 }
 
 if(!defined('BO_RECIPES_CACHE_PERIOD')) {
@@ -29,7 +29,12 @@ if(!defined('BO_RECIPES_PATH')) {
 require_once(path_join(BO_RECIPES_PATH, 'components/data/recipe/recipe.php'));
 
 // Display
+
+/// Shortcodes
 require_once(path_join(BO_RECIPES_PATH, 'components/display/shortcode/shortcode.php'));
+
+/// Print
+require_once(path_join(BO_RECIPES_PATH, 'components/display/print/print.php'));
 
 // Editor
 
