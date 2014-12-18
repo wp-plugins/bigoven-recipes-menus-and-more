@@ -64,6 +64,9 @@ to determine whether or not to render the rich snippet version of the recipe in 
 5.  The settings view lets you choose whether or not to list recipe instructions in numbered form, whether or not to enable the "Save Recipe" button and more.
 
 == Changelog ==
+= 1.1.1 = 
+* Additional files required for print
+
 = 1.1.0 = 
 * Added print support!  (More styling options coming in future free updates)
 * Changed Save button formatting to CSS
