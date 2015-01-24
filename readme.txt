@@ -59,11 +59,18 @@ complete with a link back to your recipe.  Your recipes are, and will always be,
 2. Rich snippets help your recipes stand out.  This plugin renders your recipes in rich-snippet-compatible format, but it's ultimately 
 up to Google whether or not to display recipes from your site in Rich Snippets format.  Google reports that they use a variety of "quality signals"
 to determine whether or not to render the rich snippet version of the recipe in search results.
-3.  The Recipes option on the left hand bar lets you see all your recipes added, including search for them in an easy interface.
-4.  When adding a recipe (partial screen shown), you can enter title, ingredients, preparation, yield, preparation time, nutrition information and more.
-5.  The settings view lets you choose whether or not to list recipe instructions in numbered form, whether or not to enable the "Save Recipe" button and more.
+3. The Recipes option on the left hand bar lets you see all your recipes added, including search for them in an easy interface.
+4. When adding a recipe (partial screen shown), you can enter title, ingredients, preparation, yield, preparation time, nutrition information and more.
+5. The settings view lets you choose whether or not to list recipe instructions in numbered form, whether or not to enable the "Save Recipe" button and more.
+6. Your recipe is displayed neatly for your readers, in SEO-friendly form, with easy print and save buttons.
 
 == Changelog ==
+= 1.5.0 =
+* You can choose from three design layouts in Settings area: Compact, Basic and Grey
+* Two layouts in print preview
+* Blank ingredient-lines are not displayed (no more empty bullets)
+* New graphics for save and print
+
 = 1.1.2 =
 * Adjustment of print url to fit special cases
 

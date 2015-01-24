@@ -58,7 +58,17 @@ class BO_Recipes_Components_Display_Print {
 			if(BO_RECIPES_RECIPE_TYPE == $recipe->post_type && 'publish' == $recipe->post_status) {
 				$recipe_summary = wptexturize(convert_smilies(convert_chars(wpautop($recipe->post_content))));
 
-				include('views/basic.php');
+				$print_templates = bo_recipes_get_print_templates();
+				$print_template = bo_recipes_get_setting('print-template');
+
+				$template_data = $print_templates[$print_template];
+
+				$styleheets = array();
+				foreach($template_data['stylesheets'] as $stylesheet) {
+					$stylesheets[] = plugins_url("resources/{$stylesheet}", __FILE__);
+				}
+
+				include("views/{$print_template}");
 				exit;
 			} else {
 				wp_die(__('The recipe could not be found'));
@@ -83,6 +93,47 @@ class BO_Recipes_Components_Display_Print {
 	}
 
 	#endregion Template Tags
+
+	#region Print Templates
+
+	private static $templates = null;
+
+	public static function get_print_templates() {
+		if(is_null(self::$templates)) {
+			$templates = array();
+
+			$template_matcher = trailingslashit(path_join(dirname(__FILE__), 'views')) . '*.php';
+
+			foreach(glob($template_matcher) as $template) {
+				$template_contents = file_get_contents($template);
+				$template_matches = array();
+				$stylesheets_matches = array();
+
+				if(preg_match('#Template:\s?(.+)$#mi', $template_contents, $template_matches)) {
+					$name = trim($template_matches[1]);
+				} else {
+					continue;
+				}
+
+				if(preg_match('#Stylesheets:\s?(.+)$#mi', $template_contents, $stylesheets_matches)) {
+					$stylesheets = array_map('trim', explode(',', $stylesheets_matches[1]));
+				} else {
+					$stylesheets = array();
+				}
+
+				$template_basename = basename($template);
+
+				$templates[$template_basename] = compact('name', 'stylesheets');
+			}
+
+
+			self::$templates = $templates;
+		}
+
+		return self::$templates;
+	}
+
+	#endregion Print Templates
 }
 
 require_once('lib/template-tags.php');

@@ -1,11 +1,17 @@
+<?php
+/**
+ * Template: Basic
+ * Stylesheets: basic.css
+ */
+?>
 <!doctype html>
 <html>
 	<head>
-        <?php $blog_title = get_bloginfo(); ?> 
+		<title><?php printf(__('"%s" from %s'), esc_html($recipe->post_title), esc_html(get_bloginfo('name'))); ?></title>
 
-
-		<title><?php printf(__('"%s" from %s'), $recipe->post_title, $blog_title ); ?></title>
-        <link rel="stylesheet" type="text/css" href="<?php echo plugins_url('../resources/recipeprint.css', __FILE__)   ?>">
+		<?php foreach($stylesheets as $stylesheet) { ?>
+        <link rel="stylesheet" type="text/css" href="<?php echo esc_url($stylesheet); ?>" />
+		<?php } ?>
     </head>
 	<body onload="window.print()">
 		<div class="bo-recipe">
@@ -35,12 +41,14 @@
 
 				<ul class="ingredient-list">
 					<?php foreach($ingredients as $ingredient) { ?>
+                    <?php if($ingredient!="") {?>
 		            <?php if(startsWith($ingredient,'!')){ ?>
 					<li class="ingredHeading"><?php echo esc_html(str_replace("!","",$ingredient)); ?></li>
 		            <?php } else { ?>
 					<li class="ingredient"><?php echo esc_html($ingredient); ?></li>
 		   			<?php } ?>
 					<?php } ?>
+                    <?php } ?>
 				</ul>
 				<?php } ?>
 

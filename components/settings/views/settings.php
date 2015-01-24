@@ -1,11 +1,10 @@
 <div class="wrap">
 	<h2><?php _e('Recipes - Settings'); ?></h2>
-
 	<?php settings_errors(); ?>
 
-	<p><?php printf(__('This plugin is &copy;2014 BigOven, but all your content is your own, and always will be. Read our <a href="%s" target="_blank">Pledge to Food Bloggers</a>.'), 'http://blog.bigoven.com/index.php/our-pledge-to-food-bloggers/'); ?></p>
+	<p><?php printf(__('This plugin is &copy;2015 BigOven, but all your content is your own, and always will be. Read our <a href="%s" target="_blank">Pledge to Food Bloggers</a>.'), 'http://blog.bigoven.com/index.php/our-pledge-to-food-bloggers/'); ?></p>
 
-	<p><?php printf(__('Do you need help? <a href="%s" target="_blank">Click here</a> to learn more about the BigOven plugin for WordPress.'), 'http://wordpress.bigoven.com'); ?></p>
+	<p><?php printf(__('Do you need help? <a href="%s" target="_blank">Learn more</a> about the BigOven plugin for WordPress, or email us at bloggers@bigoven.com'), 'http://wordpress.bigoven.com'); ?></p>
 
 	<form action="options.php" method="post">
 		<h3><?php _e('Display'); ?></h3>
@@ -22,6 +21,28 @@
 							<?php _e('Each recipe instruction on my site should be numbered'); ?>
 						</label>
 						<p class="description"><?php _e('Checking this box will display your recipe instructions in a sequentially numbered list'); ?></p>
+					</td>
+				</tr>
+
+				<tr>
+					<th scope="row"><label for="<?php echo self::_get_setting_id('shortcode-template'); ?>"><?php _e('Recipe Template'); ?></label></th>
+					<td>
+						<select id="<?php echo self::_get_setting_id('shortcode-template'); ?>" name="<?php echo self::_get_setting_name('shortcode-template'); ?>">
+							<?php foreach(bo_recipes_get_shortcode_templates() as $shortcode_template_key => $shortcode_template_data) { ?>
+							<option <?php selected($shortcode_template_key, $settings['shortcode-template']); ?> value="<?php echo esc_attr($shortcode_template_key); ?>"><?php echo esc_html($shortcode_template_data['name']); ?></option>
+							<?php } ?>
+						</select>
+					</td>
+				</tr>
+
+				<tr>
+					<th scope="row"><label for="<?php echo self::_get_setting_id('print-template'); ?>"><?php _e('Print Template'); ?></label></th>
+					<td>
+						<select id="<?php echo self::_get_setting_id('print-template'); ?>" name="<?php echo self::_get_setting_name('print-template'); ?>">
+							<?php foreach(bo_recipes_get_print_templates() as $print_template_key => $print_template_data) { ?>
+							<option <?php selected($print_template_key, $settings['print-template']); ?> value="<?php echo esc_attr($print_template_key); ?>"><?php echo esc_html($print_template_data['name']); ?></option>
+							<?php } ?>
+						</select>
 					</td>
 				</tr>
 			</tbody>

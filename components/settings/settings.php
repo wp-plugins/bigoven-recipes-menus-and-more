@@ -142,6 +142,8 @@ class BO_Recipes_Components_Settings {
 		return apply_filters('bo_recipes_pre_get_settings_defaults', array(
 			// Display
 			'number-instructions' => 'no',
+			'shortcode-template' => 'basic.php',
+			'print-template' => 'basic.php',
 
 			// Enhance
 			'save-recipe' => 'yes',
