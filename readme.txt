@@ -64,6 +64,9 @@ to determine whether or not to render the rich snippet version of the recipe in 
 5.  The settings view lets you choose whether or not to list recipe instructions in numbered form, whether or not to enable the "Save Recipe" button and more.
 
 == Changelog ==
+= 1.5.01 =
+* Adding a couple missing files for 1.5 release
+
 = 1.5.0 =
 * You can choose from three design layouts in Settings area: Compact, Basic and Grey
 * Two layouts in print preview
