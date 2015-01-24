@@ -3,7 +3,7 @@ Contributors: bigoven
 Donate link: http://wordpress.bigoven.com/
 Tags: recipe,hrecipe,ziplist,grocery,food,recipes
 Requires at least: 3.0.1
-Tested up to: 4.0
+Tested up to: 4.1
 Stable tag: trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -59,10 +59,9 @@ complete with a link back to your recipe.  Your recipes are, and will always be,
 2. Rich snippets help your recipes stand out.  This plugin renders your recipes in rich-snippet-compatible format, but it's ultimately 
 up to Google whether or not to display recipes from your site in Rich Snippets format.  Google reports that they use a variety of "quality signals"
 to determine whether or not to render the rich snippet version of the recipe in search results.
-3. The Recipes option on the left hand bar lets you see all your recipes added, including search for them in an easy interface.
-4. When adding a recipe (partial screen shown), you can enter title, ingredients, preparation, yield, preparation time, nutrition information and more.
-5. The settings view lets you choose whether or not to list recipe instructions in numbered form, whether or not to enable the "Save Recipe" button and more.
-6. Your recipe is displayed neatly for your readers, in SEO-friendly form, with easy print and save buttons.
+3.  The Recipes option on the left hand bar lets you see all your recipes added, including search for them in an easy interface.
+4.  When adding a recipe (partial screen shown), you can enter title, ingredients, preparation, yield, preparation time, nutrition information and more.
+5.  The settings view lets you choose whether or not to list recipe instructions in numbered form, whether or not to enable the "Save Recipe" button and more.
 
 == Changelog ==
 = 1.5.0 =
