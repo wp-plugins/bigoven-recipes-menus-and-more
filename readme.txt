@@ -91,6 +91,9 @@ to determine whether or not to render the rich snippet version of the recipe in 
 5.  The settings view lets you choose whether or not to list recipe instructions in numbered form, whether or not to enable the "Save Recipe" button and more.
 
 == Changelog ==
+= 1.5.1 =
+* New display-theme: PreptimesBox - at bloggers' request, this new theme elevates the prep and cook time stats to just below the title
+
 = 1.5.01 =
 * Adding a couple missing files for 1.5 release
 

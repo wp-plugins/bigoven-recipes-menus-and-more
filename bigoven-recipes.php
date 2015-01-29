@@ -4,7 +4,7 @@
 Plugin Name: BigOven - Recipes
 Plugin URI: http://www.bigoven.com/
 Description: Create, manage, and display SEO-friendly recipes for your site with an easy interface.
-Version: 1.5.01
+Version: 1.5.1
 Author: BigOven (c) 2014
 Author URI: http://www.bigoven.com/
 */
@@ -14,7 +14,7 @@ if(!defined('ABSPATH')) { exit; }
 // Plugin constants
 
 if(!defined('BO_RECIPES_VERSION')) {
-	define('BO_RECIPES_VERSION', '1.5.0');
+	define('BO_RECIPES_VERSION', '1.5.1');
 }
 
 if(!defined('BO_RECIPES_CACHE_PERIOD')) {
