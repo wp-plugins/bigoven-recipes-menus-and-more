@@ -1,4 +1,4 @@
-=== Recipe SEO and Save Recipe Plugin ===
+=== BigOven Recipe SEO Plugin ===
 Contributors: bigoven
 Donate link: http://wordpress.bigoven.com/
 Tags: recipe,hrecipe,ziplist,grocery,food,recipes
@@ -8,35 +8,54 @@ Stable tag: trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Make your food blog better with rich snippet markup, SEO improvements, save recipe, ziplist import, make grocery list and more.
+Improve your food blog with rich snippet markup, SEO improvements, save recipe button, ziplist import, prinitng, and more.
 
 == Description ==
 
-* **Improve your Google and Bing search-engine presence**: This plugin takes care of the hidden "rich snippets" markup of recipes for Search Engine Optimization (SEO), marking up your recipes with the preferred format from Google and Schema.org.
+* **Enjoy these Benefits**
 
-* **Import from Ziplist**: The Ziplist plugin for WordPress will soon be discontinued. Transitioning to the BigOven recipe WordPress plugin as your alternative is seamless. The BigOven plugin will import your recipes and change the shortcodes in old posts to the newly updated recipe records in a single click.  As this plugin modifies previous posts, be sure to back up your MySQL database before you click the option "Import from Ziplist" in the Settings area.
+* **Improve your Google and Bing search-engine presence**: The BigOven Recipe SEO Plugin takes care of the hidden "rich snippets" markup of recipes for Search Engine Optimization (SEO). The plugin automatically marks up your recipes with the preferred format from Google and Schema.org.
 
-* **Give your readers "Save Recipe" and "Add to Grocery List" features**! These optional, convenient features allow your recipes to easily be saved to the reader's "My Recipes" area and grocery list. Cooks can bring your recipes to the grocery store or kitchen counter with the award-winning [BigOven recipe apps](http://www.bigoven.com/mobile). Full credit and links to your original recipe are preserved.  BigOven wants to help highlight your great content, making more 
+* **Import your saved and archived recipes from Ziplist into a new data-manager**: If you're a food blogger who used Ziplist, Transitioning to the BigOven recipe WordPress plugin as your alternative is seamless. The BigOven plugin will import your recipes and change the shortcodes in old posts to the newly updated recipe records in a single click. NOTE-As this plugin modifies previous posts, be sure to back up your MySQL database before you click the option "Import from Ziplist" in the Settings area.
+
+* **Print Button and Print Format**: Each recipe has a "Print" button that brings readers to a handy print-friendly view of your recipe. Readers have the option to print with or without the recipe photo.
+
+* **Three different recipe templates (NEW)**: Display your recipes in one of three different templates that mesh seamlessly with your WordPress theme.
+
+* **Offer readers streamlined "Add to Grocery List" and/or "Save Recipe" mobile features with a terrific companion app**: With the BigOven plugin, you get a "Save Recipe" button on your recipes that allow them to be easily saved to the reader's recipe collection and/or grocery list. Your readers have a chance to carry your recipes with them to the grocery store or kitchen counter with the award-winning [BigOven recipe apps](http://www.bigoven.com/mobile). Full credit and links to your original recipe are preserved. 
 foodies aware of your writing.  We'll be using this plugin to help our editors scour the web for the the most popular food content.
 
-* **Organize your recipes**: Search your recipes by title for easy reference while posting. Your recipes list will live in the "Recipes" area of the WordPress compose dialogue. This makes combining multiple recipes in a post an easy task.
+* **Organize your recipes in a handy dashboard**: Search your recipes by title for easy reference while posting. Your recipes list will live in the "Recipes" area of the WordPress compose dialogue. This makes combining multiple recipes in a post or re-inserting "recipe cards" in posts an easy task.
 
-A few notes about the sections above:
+* **Be eligible for FREE branded promotion**: During 2015, BigOven will be highlighting recipes found on the web with the "Save Recipe" button enabled. You'll get direct web traffic right to your blog from within our apps, which have been downloaded 11+ million times and are used by millions of cooks each month.
+
+* **Example of a food blog using this plugin**: [On Sugar Mountain](http://www.onsugarmountain.com) - [Homemade Sausage Peppers](http://onsugarmountain.com/2014/09/15/fear-no-food-homemade-sausage-peppers-gnocchi)
 
 == Installation ==
 
-If you're planning to import from Ziplist (enabled by the "Import from Ziplist" button in the Settings area), we URGE you 
-to first make a backup of your recipe data.  This is because the data is imported into a new format (non-destructively) but your 
-old recipe posts and references are pointed to the new format.  That is, the old shortcodes used by Ziplist are updated 
-to the new format used by this plugin.
+If you're planning to import from Ziplist (enabled by the "Import from Ziplist" button in the Settings area), we strongly URGE you 
+to first make a backup of your recipe data. The reason is the changes to your blog are irreversible once you make this change, as links to your Ziplist-embedded recipes will be updated to the new format. The old shortcodes used by Ziplist are updated to the new format used by this plugin.
 
 1. Make a backup of your MySQL database.  See [Backing up your Database](http://codex.wordpress.org/Backing_Up_Your_Database)
-2. Activate the plugin through the Plugins menu in Wordpress
+2. Activate the plugin through the Plugins menu in WordPress
 3. Click "Add Recipe" in compose window to add a new recipe.  Enter recipe details there, including featured-image for the recipe. 
-4. Write your blog post, including text, media and more.  Where you want to place your recipe, click "Add Recipe".
-3. See documentation at [wordpress.bigoven.com](http://wordpress.bigoven.com "Wordpress Recipe SEO plugin")
+4. Select preferred recipe display/template
+5. Write your blog post, including text, media and more. Where you want to place your recipe, click "Add Recipe".
+6. See documentation at [wordpress.bigoven.com](http://wordpress.bigoven.com "Wordpress Recipe SEO plugin")
 
 == Frequently Asked Questions ==
+
+= How much does it cost? =
+
+The plugin is FREE
+
+= When someone clicks "Save Button" what happens? = 
+
+When your readers click the “Save Recipe” button, it will launch the BigOven Clipper, which lets any BigOven member save a private copy of
+your recipe and/or add to to their grocery list. All clipped recipes saved to BigOven are shown without instructions - BigOven provides a link back
+to your blog so you get the full “link juice” and search engine benefits.
+
+See an example here (http://www.bigoven.com/recipe/grilled-chicken-with-pineapple-salsa/860272)
 
 = How do I import from Ziplist? =
 
@@ -51,6 +70,14 @@ In your local Wordpress database, in the wp_postmeta table.
 
 Your recipes are your own.  When cooks decide to save a recipe, BigOven does store pointer snapshot information of your recipe privately,
 complete with a link back to your recipe.  Your recipes are, and will always be, your own.  Be sure to read [BigOven's Pledge to Food Bloggers](http://wordpress.bigoven.com).
+
+= Where can I get Help? =
+
+If you have comments, questions or problems, we are here to help.
+Contact us at bloggers@bigoven.com
+Stay in touch by following us on [Facebook](http://www.facebook.com/bigoven), [Twitter](http://www.twitter.com/bigoven) or on the [BigOven blog](http://blog.bigoven.com/)
+
+
 
 
 == Screenshots ==
