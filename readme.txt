@@ -91,8 +91,11 @@ to determine whether or not to render the rich snippet version of the recipe in 
 5.  The settings view lets you choose whether or not to list recipe instructions in numbered form, whether or not to enable the "Save Recipe" button and more.
 
 == Changelog ==
+= 1.6.1 = 
+* Enhancing layout for cook time view 
+
 = 1.6.0 = 
-* At a blogger's request, adding a new theme with cooking time just below the title
+* Adding a new theme at blogger request - cook time stats just below title 
 
 = 1.5.01 =
 * Adding a couple missing files for 1.5 release
