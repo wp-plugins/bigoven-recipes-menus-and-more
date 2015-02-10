@@ -3,7 +3,7 @@
 
 		<h2 class="fn"><?php echo esc_html($recipe->post_title); ?></h2>
 
-    
+
         <div class="bo-recipe-control">
 		<?php if('yes' === bo_recipes_get_setting('save-recipe')) { ?>
 		<div class="bo-recipe-save-container" style="display: none;">
@@ -40,7 +40,7 @@
 		<?php if(($ingredients = bo_recipes_get_ingredients($recipe->ID))) { ?>
 		<ul class="ingredient-list">
 			<?php foreach($ingredients as $ingredient) { ?>
-            <?php if(startsWith($ingredient,'!')){ ?>
+            <?php if(bo_recipes_starts_with($ingredient,'!')){ ?>
 			<li class="ingredHeading"><?php echo esc_html(str_replace("!","",$ingredient)); ?></li>
             <?php } else { ?>
 			<li class="ingredient"><?php echo esc_html($ingredient); ?></li>

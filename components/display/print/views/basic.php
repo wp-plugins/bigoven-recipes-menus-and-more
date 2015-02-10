@@ -42,7 +42,7 @@
 				<ul class="ingredient-list">
 					<?php foreach($ingredients as $ingredient) { ?>
                     <?php if($ingredient!="") {?>
-		            <?php if(startsWith($ingredient,'!')){ ?>
+		            <?php if(bo_recipes_starts_with($ingredient,'!')){ ?>
 					<li class="ingredHeading"><?php echo esc_html(str_replace("!","",$ingredient)); ?></li>
 		            <?php } else { ?>
 					<li class="ingredient"><?php echo esc_html($ingredient); ?></li>

@@ -8,7 +8,7 @@
 <div class="bo-recipe">
 	<div class="hrecipe" rel="<?php echo esc_html($recipe->ID); ?>">
 
-        
+
 
         <table>
         <tr>
@@ -34,9 +34,9 @@
         </div>
             </td>
         </tr></table>
-		
 
-       
+
+
 
 		<?php if(has_post_thumbnail($recipe->ID)) { ?>
 		<div class="photo-container">
@@ -60,7 +60,7 @@
 		<ul class="ingredient-list">
 			<?php foreach($ingredients as $ingredient) { ?>
             <?php if($ingredient!="") {?>
-            <?php if(startsWith($ingredient,'!')){ ?>
+            <?php if(bo_recipes_starts_with($ingredient,'!')){ ?>
 			<li class="ingredHeading"><?php echo esc_html(str_replace("!","",$ingredient)); ?></li>
             <?php } else { ?>
 			<li class="ingredient"><?php echo esc_html($ingredient); ?></li>

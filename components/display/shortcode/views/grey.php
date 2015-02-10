@@ -37,8 +37,8 @@
 			<?php echo $recipe_summary; ?>
 		</div>
 		<?php } ?>
-  
-        
+
+
 
 		<?php if(bo_recipes_has_recipe_attribute($recipe->ID, 'yield')) { ?>
 		<p class="yield-container">
@@ -50,7 +50,7 @@
 		<ul class="ingredient-list">
 			<?php foreach($ingredients as $ingredient) { ?>
             <?php if($ingredient!="") {?>
-            <?php if(startsWith($ingredient,'!')){ ?>
+            <?php if(bo_recipes_starts_with($ingredient,'!')){ ?>
 			<li class="ingredHeading"><?php echo esc_html(str_replace("!","",$ingredient)); ?></li>
             <?php } else { ?>
 			<li class="ingredient"><?php echo esc_html($ingredient); ?></li>
@@ -80,7 +80,7 @@
 
 		<?php } ?>
 
-		
+
         <?php
 		$time_cook = bo_recipes_get_time_cook($recipe->ID);
 		$time_preparation = bo_recipes_get_time_preparation($recipe->ID);
