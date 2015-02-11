@@ -91,6 +91,9 @@ to determine whether or not to render the rich snippet version of the recipe in 
 5.  The settings view lets you choose whether or not to list recipe instructions in numbered form, whether or not to enable the "Save Recipe" button and more.
 
 == Changelog ==
+= 1.6.3 =
+* Fix for "Featured Image" with Genesis theme
+
 = 1.6.1 = 
 * Enhancing layout for cook time view 
 

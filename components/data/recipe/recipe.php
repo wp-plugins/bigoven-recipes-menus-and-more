@@ -42,7 +42,7 @@ class BO_Recipes_Components_Data_Recipe {
 		}
 
 		// Actions that affect both the administrative and frontend interface or operation
-		add_action('after_setup_theme', array(__CLASS__, 'register_theme_support'));
+		add_action('after_setup_theme', array(__CLASS__, 'register_theme_support'), 10000001);
 		add_action('init', array(__CLASS__, 'register_types'));
 		add_action('wp_ajax_bo_recipes_create', array(__CLASS__, 'ajax_recipes_create'));
 		add_action('wp_ajax_bo_recipes_search', array(__CLASS__, 'ajax_recipes_search'));
@@ -220,7 +220,9 @@ class BO_Recipes_Components_Data_Recipe {
 	#region Recipe Registration
 
 	public static function register_theme_support() {
-		add_theme_support('post-thumbnails', array(BO_RECIPES_RECIPE_TYPE));
+		if(!current_theme_supports('post-thumbnails')) {
+			add_theme_support('post-thumbnails', array(BO_RECIPES_RECIPE_TYPE));
+		}
 	}
 
 	private static $recipe_error = null;
