@@ -1,9 +1,10 @@
-<div class="bo-recipes-process-wrapper">
+<div class="bo-recipes-process-wrapper" style="display: none;">
 	<h2 class="nav-tab-wrapper">
-		<a href="#search" class="nav-tab" data-bind="click: setSearchStateActive, css: { 'nav-tab-active': searchStateActive() }">
-			<?php _e('Insert'); ?>
-		</a><a href="#create" class="nav-tab" data-bind="click: setCreateStateActive, css: { 'nav-tab-active': createStateActive() }">
+		<a href="#create" class="nav-tab" data-bind="click: setCreateStateActive, css: { 'nav-tab-active': createStateActive() }, text: createText">
 			<?php _e('Create'); ?>
+		</a>
+        <a href="#search" class="nav-tab" data-bind="click: setSearchStateActive, css: { 'nav-tab-active': searchStateActive() }, visible: createNew">
+			<?php _e('Insert'); ?>
 		</a>
 	</h2>
 
@@ -71,47 +72,57 @@
 		</script>
 
 		<div data-bind="visible: createStateActive">
-			<table class="form-table">
-				<tbody>
-					<tr>
-						<th scope="row"><label for="bo-recipes-name"><?php _e('Name'); ?></label></th>
-						<td>
-							<input type="text" class="large-text" id="bo-recipes-name" placeholder="<?php _e('Grandma\'s Apple Pie'); ?>" value="" data-bind="value: createName" />
-						</td>
-					</tr>
+			<div data-bind="visible: recipeRetrieved">
+				<table class="form-table">
+					<tbody>
+						<tr>
+							<th scope="row"><label for="bo-recipes-name"><?php _e('Name'); ?></label></th>
+							<td>
+								<input type="text" class="large-text" id="bo-recipes-name" placeholder="<?php _e('Grandma\'s Apple Pie'); ?>" value="" data-bind="value: createName" />
+							</td>
+						</tr>
 
-					<tr>
-						<th scope="row"><label for="bo-recipes-ingredients"><?php _e('Ingredients'); ?></label></th>
-						<td>
-							<textarea class="large-text" id="bo-recipes-ingredients" placeholder="<?php _e('2 tablespoons butter'); ?>" rows="6" data-bind="value: createIngredients"><?php echo esc_textarea(''); ?></textarea>
-							<p class="description"><?php _e('Press enter after each ingredient, including the quantity and measurement - there is no need to number your ingredients'); ?></p>
-						</td>
-					</tr>
+						<tr>
+							<th scope="row"><label for="bo-recipes-ingredients"><?php _e('Ingredients'); ?></label></th>
+							<td>
+								<textarea class="large-text" id="bo-recipes-ingredients" placeholder="<?php _e('2 tablespoons butter'); ?>" rows="6" data-bind="value: createIngredients"><?php echo esc_textarea(''); ?></textarea>
+								<p class="description"><?php _e('Press enter after each ingredient, including the quantity and measurement - there is no need to number your ingredients'); ?></p>
+							</td>
+						</tr>
 
-					<tr>
-						<th scope="row"><label for="bo-recipes-instructions"><?php _e('Instructions'); ?></label></th>
-						<td>
-							<textarea class="large-text" id="bo-recipes-instructions" placeholder="<?php _e('Heat oven to 425 degrees'); ?>" rows="6" data-bind="value: createInstructions"><?php echo esc_textarea(''); ?></textarea>
-							<p class="description"><?php _e('Press enter after each instruction - there is no need to number your instructions'); ?></p>
-						</td>
-					</tr>
+						<tr>
+							<th scope="row"><label for="bo-recipes-instructions"><?php _e('Instructions'); ?></label></th>
+							<td>
+								<textarea class="large-text" id="bo-recipes-instructions" placeholder="<?php _e('Heat oven to 425 degrees'); ?>" rows="6" data-bind="value: createInstructions"><?php echo esc_textarea(''); ?></textarea>
+								<p class="description"><?php _e('Press enter after each instruction - there is no need to number your instructions'); ?></p>
+                <p class="description">
+                  <?php _c('You can add links to [a website](http://foo/bar) or *this text will be italic* or **this text will be bold**'); ?></p>
+							</td>
+						</tr>
 
-					<tr>
-						<th scope="row"><label for="content"><?php _e('Summary'); ?></label></th>
-						<td>
-							<textarea class="large-text" id="content"  placeholder="<?php _e('The most delicious apple pie you\'ll ever taste'); ?>" rows="6" data-bind="value: createSummary"><?php echo esc_textarea(''); ?></textarea>
-							<p class="description"><?php _e('Provide a short introduction to or an accompany statement about this recipe'); ?></p>
-						</td>
-					</tr>
-				</tbody>
-			</table>
+						<tr>
+							<th scope="row"><label for="content"><?php _e('Summary'); ?>
+                  </label></th>
+							<td>
+								<textarea class="large-text" id="content"  placeholder="<?php _e('The most delicious apple pie you\'ll ever taste'); ?>" rows="6" data-bind="value: createSummary"><?php echo esc_textarea(''); ?></textarea>
+								<p class="description"><?php _e('Provide a short introduction to or an accompany statement about this recipe'); ?></p>
+							</td>
+						</tr>
+					</tbody>
+				</table>
 
-			<p><?php printf(__('For more advanced recipe creation, please <a href="%s" target="_blank">add a new recipe</a>.'), $add_new_url); ?></p>
+				<p><?php printf(__('For more advanced recipe creation, please <a href="%s" target="_blank">add a new recipe</a>.'), $add_new_url); ?></p>
 
-			<p class="submit">
-				<input type="button" class="button button-primary" value="<?php echo esc_attr(__('Save and Insert')); ?>" data-bind="click: create" />
-				<span class="spinner bo-recipes-spinner" data-bind="style: { display: createActive() ? 'inline-block' : 'none' }"></span>
-			</p>
+				<p class="submit">
+					<input type="button" class="button button-primary" value="<?php echo esc_attr(__('Save and Insert')); ?>" data-bind="click: create" />
+					<input type="button" class="button button-secondary" value="<?php echo esc_attr(__('Cancel')); ?>" data-bind="click: cancel, visible: recipeId()" />
+					<span class="spinner bo-recipes-spinner" data-bind="style: { display: createActive() ? 'inline-block' : 'none' }"></span>
+				</p>
+			</div>
+
+			<div data-bind="visible: retrievingRecipe">
+				<p><?php _e('Your recipe details are being fetched. Please wait&hellip;'); ?></p>
+			</div>
 		</div>
 
 		<div class="bo-recipes-process-clear"></div>

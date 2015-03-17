@@ -64,6 +64,13 @@ class BO_Recipes_Components_Settings {
 		), admin_url('edit.php'));
 		$support_url = 'http://support.bigoven.com/hc/en-us/articles/202384255';
 
+		$border_styles = array(
+			'none' => __('None'),
+			'solid' => __('Solid'),
+			'dashed' => __('Dashed'),
+			'dotted' => __('Dotted'),
+		);
+
 		include('views/settings.php');
 	}
 
@@ -102,6 +109,9 @@ class BO_Recipes_Components_Settings {
 				'settings-updated' => true,
 			), admin_url('edit.php')));
 		}
+
+		wp_enqueue_script('bo-recipes-settings', plugins_url('resources/settings.js', __FILE__), array('jquery', 'wp-color-picker'), BO_RECIPES_VERSION, true);
+		wp_enqueue_style('wp-color-picker');
 	}
 
 	#endregion Actions
@@ -144,6 +154,11 @@ class BO_Recipes_Components_Settings {
 			'number-instructions' => 'no',
 			'shortcode-template' => 'basic.php',
 			'print-template' => 'basic.php',
+
+			/// Border
+			'border-style' => 'none',
+			'border-color' => '#cccccc',
+			'border-width' => '0',
 
 			// Enhance
 			'save-recipe' => 'yes',

@@ -2,7 +2,8 @@
 	<h2><?php _e('Recipes - Settings'); ?></h2>
 	<?php settings_errors(); ?>
 
-	<p><?php printf(__('This plugin is &copy;2015 BigOven, but all your content is your own, and always will be. Read our <a href="%s" target="_blank">Pledge to Food Bloggers</a>.'), 'http://blog.bigoven.com/index.php/our-pledge-to-food-bloggers/'); ?></p>
+	<p>
+  <?php printf(__('This plugin is &copy;2015 BigOven, but all your content is your own, and always will be. Read our <a href="%s" target="_blank">Pledge to Food Bloggers</a>.'), 'http://wordpress.bigoven.com/index.php/our-pledge-to-food-bloggers-2/'); ?></p>
 
 	<p><?php printf(__('Do you need help? <a href="%s" target="_blank">Learn more</a> about the BigOven plugin for WordPress, or email us at bloggers@bigoven.com'), 'http://wordpress.bigoven.com'); ?></p>
 
@@ -21,6 +22,27 @@
 							<?php _e('Each recipe instruction on my site should be numbered'); ?>
 						</label>
 						<p class="description"><?php _e('Checking this box will display your recipe instructions in a sequentially numbered list'); ?></p>
+					</td>
+				</tr>
+
+				<tr>
+					<th scope="row"><?php _e('Border Style'); ?></th>
+					<td>
+						<select id="<?php echo self::_get_setting_id('border-width'); ?>" name="<?php echo self::_get_setting_name('border-width'); ?>">
+							<?php foreach(range(0, 10) as $border_width) { ?>
+							<option <?php selected($border_width, $settings['border-width']); ?> value="<?php echo esc_attr($border_width); ?>"><?php echo esc_html($border_width); ?>px</option>
+							<?php } ?>
+						</select>
+
+						<select id="<?php echo self::_get_setting_id('border-style'); ?>" name="<?php echo self::_get_setting_name('border-style'); ?>">
+							<?php foreach($border_styles as $border_style => $border_style_nice) { ?>
+							<option <?php selected($border_style, $settings['border-style']); ?> value="<?php echo esc_attr($border_style); ?>"><?php echo esc_html($border_style_nice); ?></option>
+							<?php } ?>
+						</select>
+
+						<input type="text" class="colorpicker bo-recipes-colorpicker" id="<?php echo self::_get_setting_id('border-color'); ?>" name="<?php echo self::_get_setting_name('border-color'); ?>" value="<?php echo esc_attr($settings['border-color']); ?>" />
+
+						<p class="description"><?php _e('The border style you select will appear around all your recipes'); ?></p>
 					</td>
 				</tr>
 
@@ -110,3 +132,9 @@
 
 	<?php } ?>
 </div>
+
+<script type="text/javascript">
+jQuery(document).ready(function($) {
+
+});
+</script>

@@ -5,7 +5,7 @@
  * Stylesheets: basic.css
  */
 ?>
-<div class="bo-recipe">
+<div class="bo-recipe" style="border: <?php echo bo_recipes_get_setting_border(); ?>">
 	<div class="hrecipe" rel="<?php echo esc_html($recipe->ID); ?>">
 
 		<h2 class="fn"><?php echo esc_html($recipe->post_title); ?></h2>
@@ -49,9 +49,9 @@
 			<?php foreach($ingredients as $ingredient) { ?>
             <?php if($ingredient!="") {?>
             <?php if(bo_recipes_starts_with($ingredient,'!')){ ?>
-			<li class="ingredHeading"><?php echo esc_html(str_replace("!","",$ingredient)); ?></li>
+			<li class="ingredHeading"><?php echo trim(str_replace("!","",$ingredient)); ?></li>
             <?php } else { ?>
-			<li class="ingredient"><?php echo esc_html($ingredient); ?></li>
+			<li class="ingredient"><?php echo trim($ingredient); ?></li>
    			<?php } ?>
 			<?php } ?>
             <?php } ?>
@@ -63,13 +63,13 @@
 		<?php if('yes' === bo_recipes_get_setting('number-instructions')) { ?>
 		<ol class="instructions">
 			<?php foreach($instructions as $instruction) { ?>
-			<li class="instruction"><?php echo esc_html($instruction); ?></li>
+			<li class="instruction"><?php echo trim($instruction); ?></li>
 			<?php } ?>
 		</ol>
 		<?php } else { ?>
 		<div class="instructions">
 			<?php foreach($instructions as $instruction) { ?>
-			<p class="instruction"><?php echo esc_html($instruction); ?></p>
+			<p class="instruction"><?php echo trim($instruction); ?></p>
 			<?php } ?>
 		</div>
 		<?php } ?>

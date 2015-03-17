@@ -13,11 +13,25 @@ function bo_recipes_get_recipe_attribute($recipe_id = null, $recipe_attribute = 
 #region Ingredients and Instructions Template Tags
 
 function bo_recipes_get_ingredients($recipe_id = null) {
-	return apply_filters(__FUNCTION__, array_map('sanitize_text_field', explode("\n", bo_recipes_get_recipe_attribute($recipe_id, 'ingredients'))), $recipe_id);
+	return apply_filters(__FUNCTION__, array_map('bo_recipes_markdown', array_map('sanitize_text_field', array_map('trim', explode("\n", bo_recipes_get_recipe_attribute($recipe_id, 'ingredients'))))), $recipe_id);
 }
 
 function bo_recipes_get_instructions($recipe_id = null) {
-	return apply_filters(__FUNCTION__, array_map('sanitize_text_field', explode("\n", bo_recipes_get_recipe_attribute($recipe_id, 'instructions'))), $recipe_id);
+	return apply_filters(__FUNCTION__, array_map('bo_recipes_markdown', array_map('sanitize_text_field', array_map('trim', explode("\n", bo_recipes_get_recipe_attribute($recipe_id, 'instructions'))))), $recipe_id);
+}
+
+function bo_recipes_markdown($text) {
+	if(!class_exists('Markdown_Parser') && !function_exists('Markdown')) {
+		require_once(path_join(BO_RECIPES_PATH, 'lib/markdown.php'));
+	}
+
+	return function_exists('Markdown') ? bo_recipes_allow_tags(Markdown($text)) : bo_recipes_allow_tags($text);
+}
+
+function bo_recipes_allow_tags($text) {
+	$tags = apply_filters(__FUNCTION__, '<b><i><em><strong><a>');
+
+	return strip_tags($text, $tags);
 }
 
 #endregion Ingredients and Instructions Template Tags

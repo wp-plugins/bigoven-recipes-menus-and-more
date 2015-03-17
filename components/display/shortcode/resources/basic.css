@@ -6,6 +6,8 @@
 .bo-recipe-control {
     clear: both;
 }
+.fn { padding-top: 0.2em;}
+.hrecipe{ padding: 5px 5px 5px 8px;}
 .bo-recipe-print-container {
     float: right;
     padding-top: 0.6em;
@@ -50,9 +52,5 @@
     padding-left: 0px;
     margin-left: 0px;
 }
-.duration-list li {
-    float: left;
-    display: inline-block;
-    margin-right: 2em;
-}
+
 .instructions {margin-top: 1em;}

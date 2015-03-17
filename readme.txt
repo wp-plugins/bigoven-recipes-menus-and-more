@@ -91,8 +91,11 @@ to determine whether or not to render the rich snippet version of the recipe in 
 5.  The settings view lets you choose whether or not to list recipe instructions in numbered form, whether or not to enable the "Save Recipe" button and more.
 
 == Changelog ==
-= 1.6.3 =
-* Fix for "Featured Image" with Genesis theme
+= 2.0.0 =
+* In recipe instructions, you can now include HTML links, italics and bold via Markdown syntax (see the editor for description)
+* Recipe posts now show a placeholder with a handy Edit button in the post itself linking to the recipe
+* You can now style a border on your recipe card, style it with width, type and color
+* Adding a recipe now defaults to -new- recipe, not find from library
 
 = 1.6.1 = 
 * Enhancing layout for cook time view 

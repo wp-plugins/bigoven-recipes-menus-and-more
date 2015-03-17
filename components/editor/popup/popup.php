@@ -65,10 +65,9 @@ class BO_Recipes_Components_Editor_Popup {
 		wp_enqueue_script('bo-recipes-editor-popup', plugins_url('resources/editor-popup.js', __FILE__), array('jquery', 'knockout'), BO_RECIPES_VERSION, true);
 		wp_enqueue_style('bo-recipes-editor-popup', plugins_url('resources/editor-popup.css', __FILE__), array('media'), BO_RECIPES_VERSION);
 
-		wp_localize_script('bo-recipes-editor-popup', 'BO_Recipes_Editor_Buttons', array(
-			'stateName' => 'iframe:bo_recipes',
-			'stateTitle' => __('Recipes'),
-			'shortcode' => BO_RECIPES_RECIPE_SHORTCODE,
+		wp_localize_script('bo-recipes-editor-popup', 'BO_Recipes_Editor_Popup', array(
+			'textCreate' => __('Create'),
+			'textUpdate' => __('Update'),
 		));
 	}
 

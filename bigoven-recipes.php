@@ -4,8 +4,8 @@
 Plugin Name: BigOven - Recipes
 Plugin URI: http://www.bigoven.com/
 Description: Create, manage, and display SEO-friendly recipes for your site with an easy interface.
-Version: 1.6.3
-Author: BigOven (c) 2014
+Version: 2.0.0
+Author: BigOven (c) 2015
 Author URI: http://www.bigoven.com/
 */
 
@@ -14,7 +14,7 @@ if(!defined('ABSPATH')) { exit; }
 // Plugin constants
 
 if(!defined('BO_RECIPES_VERSION')) {
-	define('BO_RECIPES_VERSION', '1.6.3');
+	define('BO_RECIPES_VERSION', '2.0.0');
 }
 
 if(!defined('BO_RECIPES_CACHE_PERIOD')) {
@@ -40,6 +40,9 @@ require_once(path_join(BO_RECIPES_PATH, 'components/display/print/print.php'));
 
 /// Buttons
 require_once(path_join(BO_RECIPES_PATH, 'components/editor/buttons/buttons.php'));
+
+/// Placeholder (for displaying a placeholder for recipes in visual editor)
+require_once(path_join(BO_RECIPES_PATH, 'components/editor/placeholder/placeholder.php'));
 
 /// Popup (for find and insert)
 require_once(path_join(BO_RECIPES_PATH, 'components/editor/popup/popup.php'));

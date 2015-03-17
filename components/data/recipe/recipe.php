@@ -45,6 +45,7 @@ class BO_Recipes_Components_Data_Recipe {
 		add_action('after_setup_theme', array(__CLASS__, 'register_theme_support'), 10000001);
 		add_action('init', array(__CLASS__, 'register_types'));
 		add_action('wp_ajax_bo_recipes_create', array(__CLASS__, 'ajax_recipes_create'));
+		add_action('wp_ajax_bo_recipes_get', array(__CLASS__, 'ajax_recipes_get'));
 		add_action('wp_ajax_bo_recipes_search', array(__CLASS__, 'ajax_recipes_search'));
 	}
 
@@ -67,12 +68,18 @@ class BO_Recipes_Components_Data_Recipe {
 	public static function ajax_recipes_create() {
 		$data = stripslashes_deep($_POST);
 
-		$recipe_id = wp_insert_post(array(
+		$post_arr = array(
 			'post_content' => trim($data['summary']),
 			'post_status' => 'publish',
 			'post_title' => trim($data['name']),
 			'post_type' => BO_RECIPES_RECIPE_TYPE,
-		));
+		);
+
+		if(isset($data['id']) && !empty($data['id'])) {
+			$post_arr['ID'] = $data['id'];
+		}
+
+		$recipe_id = wp_insert_post($post_arr);
 
 		if(!is_wp_error($recipe_id)) {
 			self::_set_recipe_attributes($recipe_id, array(
@@ -90,6 +97,20 @@ class BO_Recipes_Components_Data_Recipe {
 				'errorMessage' => $post_id->get_error_message(),
 			));
 		}
+	}
+
+	public static function ajax_recipes_get() {
+		$data = stripslashes_deep($_POST);
+
+		$recipe_id = $data['id'];
+		$recipe = get_post($data['id']);
+
+		wp_send_json(array(
+			'summary' => $recipe->post_content,
+			'name' => $recipe->post_title,
+			'ingredients' => bo_recipes_get_recipe_attribute($recipe_id, 'ingredients'),
+			'instructions' => bo_recipes_get_recipe_attribute($recipe_id, 'instructions'),
+		));
 	}
 
 	public static function ajax_recipes_search() {
@@ -146,9 +167,6 @@ class BO_Recipes_Components_Data_Recipe {
 
 			wp_enqueue_style('bo-recipes-recipe', plugins_url('resources/recipe.css', __FILE__), array(), BO_RECIPES_VERSION);
 			wp_enqueue_script('bo-recipes-recipe', plugins_url('resources/recipe.js', __FILE__), array('jquery'), BO_RECIPES_VERSION, true);
-			wp_localize_script('bo-recipes-recipe', 'CLCDirectoryRecipe', array(
-				'ajaxGetImageUrl' => add_query_arg('action', 'bo_recipes_recipe_get_image_url', admin_url('admin-ajax.php')),
-			));
 		}
 	}
 
